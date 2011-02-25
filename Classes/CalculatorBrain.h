@@ -12,13 +12,21 @@
 @interface CalculatorBrain : NSObject {
 @private
 	double operand;
-	NSString *waitingOperation;
-	double waitingOperand;
 	double memory;
+	double waitingOperand;
+	NSString *waitingOperation;
+	NSString *variableAsOperand;
 }
 
-@property double memory;
-@property double operand;
+
+//Why doesn't it work with (nonatomic, retain) for operand and memory. Is it because they are no objects.
+@property (nonatomic) double operand;
+@property (nonatomic) double memory;
+@property (nonatomic) double waitingOperand;
+
+@property (nonatomic, retain) NSString *waitingOperation;
+@property (nonatomic, retain) NSString *variableAsOperand;
+@property (nonatomic, retain, readonly) id expression;
 
 - (double)performOperation:(NSString *)operation;
 

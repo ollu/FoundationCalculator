@@ -18,6 +18,7 @@
 		4983C5011315857300866FA1 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 4983C5001315857300866FA1 /* icon.png */; };
 		6F328C9613164CF2002ACECD /* display.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F328C9513164CF2002ACECD /* display.png */; };
 		6FC51B4B1309807800C9570E /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC51B4A1309807800C9570E /* CalculatorBrain.m */; };
+		6FE67B1D1316A70500892B20 /* btn_bg-red.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FE67B1C1316A70500892B20 /* btn_bg-red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		6F328C9513164CF2002ACECD /* display.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = display.png; path = assets/display.png; sourceTree = "<group>"; };
 		6FC51B491309807800C9570E /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
 		6FC51B4A1309807800C9570E /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
+		6FE67B1C1316A70500892B20 /* btn_bg-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_bg-red.png"; path = "assets/btn_bg-red.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Calculator-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Calculator-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 		4983C4EF1315827300866FA1 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				6FE67B1C1316A70500892B20 /* btn_bg-red.png */,
 				6F328C9513164CF2002ACECD /* display.png */,
 				4983C5001315857300866FA1 /* icon.png */,
 			);
@@ -179,6 +182,7 @@
 				2899E5220DE3E06400AC0155 /* CalculatorViewController.xib in Resources */,
 				4983C5011315857300866FA1 /* icon.png in Resources */,
 				6F328C9613164CF2002ACECD /* display.png in Resources */,
+				6FE67B1D1316A70500892B20 /* btn_bg-red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

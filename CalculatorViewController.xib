@@ -289,7 +289,7 @@
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjUyMTU2ODYyNzUAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
 					</object>
@@ -469,6 +469,10 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{80, 101}, {49, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<object class="NSColor" key="IBUIBackgroundColor" id="768030225">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MCAwAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -477,17 +481,19 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">M+</string>
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="771207748"/>
 						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
+						<object class="NSCustomResource" key="IBUINormalBackgroundImage" id="85373197">
+							<string key="NSClassName">NSImage</string>
+							<string key="NSResourceName">btn_bg-red.png</string>
+						</object>
 					</object>
 					<object class="IBUIButton" id="352856325">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{137, 101}, {49, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="IBUIBackgroundColor" ref="768030225"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -496,11 +502,9 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">M-</string>
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="771207748"/>
 						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
+						<reference key="IBUINormalBackgroundImage" ref="85373197"/>
 					</object>
 					<object class="IBUIButton" id="136413154">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -515,17 +519,16 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">MR</string>
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="771207748"/>
 						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
+						<reference key="IBUINormalBackgroundImage" ref="85373197"/>
 					</object>
 					<object class="IBUIButton" id="640641040">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{23, 146}, {49, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<reference key="IBUIBackgroundColor" ref="768030225"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -534,17 +537,19 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">MC</string>
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
-						<object class="NSColor" key="IBUINormalTitleColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
-						</object>
+						<reference key="IBUINormalTitleColor" ref="771207748"/>
 						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
+						<reference key="IBUINormalBackgroundImage" ref="85373197"/>
 					</object>
 					<object class="IBUIButton" id="85876073">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{251, 101}, {49, 37}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
+						<object class="NSColor" key="IBUIBackgroundColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC4xNTY4NjI3NDUxIDAuMTU2ODYyNzQ1MSAwLjE1Njg2Mjc0NTEAA</bytes>
+						</object>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
@@ -555,9 +560,12 @@
 						<reference key="IBUIHighlightedTitleColor" ref="771207748"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
+							<bytes key="NSRGB">MC4xOTYwNzg0MzE0IDAuMzA5ODAzOTIxNiAwLjY3ODQzMTM3MjUAA</bytes>
 						</object>
-						<reference key="IBUINormalTitleShadowColor" ref="119349972"/>
+						<object class="NSColor" key="IBUINormalTitleShadowColor">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+						</object>
 					</object>
 					<object class="IBUILabel" id="657737718">
 						<reference key="NSNextResponder" ref="774585933"/>
@@ -876,7 +884,6 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="657737718"/>
-							<reference ref="774673289"/>
 							<reference ref="701211493"/>
 							<reference ref="602928508"/>
 							<reference ref="68332115"/>
@@ -903,6 +910,7 @@
 							<reference ref="500102609"/>
 							<reference ref="434415329"/>
 							<reference ref="613392819"/>
+							<reference ref="774673289"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -1179,7 +1187,7 @@
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABDegAAw6WAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAABBuAAAw7SAAA</bytes>
 					</object>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -1209,7 +1217,7 @@
 					<object class="NSAffineTransform">
 						<bytes key="NSTransformStruct">P4AAAL+AAABDBgAAwtQAAA</bytes>
 					</object>
-					<string>{{400, 316}, {320, 480}}</string>
+					<string>{{416, 289}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
@@ -1522,8 +1530,17 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">Calculator.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="NS.key.0">display.png</string>
-			<string key="NS.object.0">{310, 70}</string>
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>btn_bg-red.png</string>
+				<string>display.png</string>
+			</object>
+			<object class="NSMutableArray" key="dict.values">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<string>{49, 37}</string>
+				<string>{310, 70}</string>
+			</object>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">132</string>
 	</data>

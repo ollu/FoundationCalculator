@@ -8,17 +8,13 @@
 
 #import "CalculatorViewController.h"
 
-@interface CalculatorViewController()
-@property (readonly) CalculatorBrain *brain;
-@end
-
-
 @implementation CalculatorViewController
 
+@synthesize userIsInTheMiddleOfTypingANumber;
+@synthesize display;
 
 // "Lazy instanciation"
-- (CalculatorBrain *)brain
-{
+- (CalculatorBrain *)brain {
 	// If there is no instance of brain create one and return it.
 	if (!brain) {
 		brain = [[CalculatorBrain alloc] init];
@@ -26,8 +22,7 @@
 	return brain;
 }
 
-- (IBAction)digitPressed:(UIButton *)sender
-{
+- (IBAction)digitPressed:(UIButton *)sender {
 	NSString *digit = sender.titleLabel.text;
 	NSRange range = [display.text rangeOfString:@"."];
 	
@@ -66,8 +61,7 @@
 	}
 }
 
-- (IBAction)operationPressed:(UIButton *)sender
-{
+- (IBAction)operationPressed:(UIButton *)sender {
 	NSString *operation = sender.titleLabel.text;
 	
 	if (userIsInTheMiddleOfTypingANumber) {
@@ -80,6 +74,11 @@
 	//[display setText:[NSString stringWithFormat:@"%g", result]];
 	[self.brain performOperation:operation];
 	display.text = [NSString stringWithFormat:@"%g", self.brain.operand];
+}
+
+- (void)dealloc {
+	[brain release];
+	[super dealloc];
 }
 
 @end

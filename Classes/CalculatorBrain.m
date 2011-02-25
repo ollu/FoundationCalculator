@@ -13,79 +13,88 @@
 
 @synthesize memory;
 @synthesize operand;
+@synthesize waitingOperand;
+@synthesize expression;
+@synthesize waitingOperation;
+@synthesize variableAsOperand;
 
-- (void)performWaitingOperation
-{	
+- (void)performWaitingOperation {
 	if ([@"+" isEqual:waitingOperation]) {
-		operand = waitingOperand + operand;
+		self.operand = self.waitingOperand + self.operand;
 	}
 	else if ([@"-" isEqual:waitingOperation]) {
-		operand = waitingOperand - operand;
+		self.operand = self.waitingOperand - self.operand;
 	}
 	else if ([@"*" isEqual:waitingOperation]) {
-		operand = waitingOperand * operand;
+		self.operand = self.waitingOperand * self.operand;
 	}
 	else if ([@"/" isEqual:waitingOperation]) {
-		if (operand) {
-			operand = waitingOperand / operand;
+		if (self.operand) {
+			self.operand = self.waitingOperand / self.operand;
 		}
 	}
 }
 
 // operation is the arithmetic sent
 // and operand is the number
-- (double)performOperation:(NSString *)operation
-{
+- (double)performOperation:(NSString *)operation {
 		NSLog(@"%@", operation);
 	
 	if ([operation isEqual:@"sqrt"]) {
-		operand = sqrt(operand);
+		self.operand = sqrt(self.operand);
 	}
 	else if ([operation isEqual:@"+/-"])
 	{
-		operand = - operand;
+		self.operand = - self.operand;
 	}
 	else if ([operation isEqual:@"cos"])
 	{
-		operand = cos(operand);
+		self.operand = cos(self.operand);
 	}
 	else if ([operation isEqual:@"sin"])
 	{
-		operand = sin(operand);
+		self.operand = sin(self.operand);
 	}
 	else if ([operation isEqual:@"1/x"])
 	{
-		operand = 1 / operand;
+		self.operand = 1 / self.operand;
 	}
 	else if ([operation isEqual:@"M+"])
 	{
-		memory += operand;
+		self.memory += self.operand;
 	}
 	else if ([operation isEqual:@"M-"])
 	{
-		memory -= operand;
+		self.memory -= self.operand;
 	}
 	else if ([operation isEqual:@"MR"])
 	{
-		operand = memory;
+		self.operand = self.memory;
 	}
 	else if ([operation isEqual:@"MC"])
 	{
-		memory = 0;
+		self.memory = 0;
 	}
 	else if ([operation isEqual:@"C"])
 	{
-		operand = 0;
-		waitingOperand = 0;
+		self.operand = 0;
+		self.waitingOperand = 0;
 		waitingOperation = nil;
 	}
 	else {
 		[self performWaitingOperation];
 		waitingOperation = operation;
-		waitingOperand = operand;
+		self.waitingOperand = operand;
 	}
-
+	[waitingOperation autorelease];
 	return operand;
+}
+
+- (void)dealloc {
+	[expression release];
+	[waitingOperation release];
+	[variableAsOperand release];
+    [super dealloc];
 }
 
 @end
