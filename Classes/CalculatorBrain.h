@@ -19,7 +19,7 @@
 }
 
 
-//Why doesn't it work with (nonatomic, retain) for operand and memory. Is it because they are no objects.
+//Why doesn't it work with (nonatomic, retain) for operand and memory. Is it because they are no "NS" objects.
 @property (nonatomic) double operand;
 @property (nonatomic) double memory;
 @property (nonatomic) double waitingOperand;
@@ -29,5 +29,14 @@
 @property (nonatomic, retain, readonly) id expression;
 
 - (double)performOperation:(NSString *)operation;
+
+//+ (double)evaluateExpression:(id)anExpression
+//		 usingVariableValues:(NSDictionary *)variables;
+//
+//+ (NSSet *)variablesInExpression:(id)anExpression;
+//+ (NSString *)descriptionOfExpression:(id)anExpression;
+//
+//+ (id)propertyListForExpression:(id)anExpression;
+//+ (id)expressionForPropertyList:(id)propertyList;
 
 @end

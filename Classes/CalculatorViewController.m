@@ -35,7 +35,6 @@
 	
 	if (range.location == NSNotFound) {	
 		if (userIsInTheMiddleOfTypingANumber) {
-			//[display setText:[[display text] stringByAppendingString:digit]];
 			display.text = [display.text stringByAppendingString:digit];
 		}
 		else {
@@ -50,7 +49,6 @@
 		}
 		else {
 			if (userIsInTheMiddleOfTypingANumber) {
-				//[display setText:[[display text] stringByAppendingString:digit]];
 				display.text = [display.text stringByAppendingString:digit];
 			}
 			else {
@@ -65,13 +63,10 @@
 	NSString *operation = sender.titleLabel.text;
 	
 	if (userIsInTheMiddleOfTypingANumber) {
-		//[[self brain] setOperand:[[display text] doubleValue]];
 		self.brain.operand = [display.text doubleValue];
 		userIsInTheMiddleOfTypingANumber = NO;
 	}
 	
-	//double result = [[self brain] performOperation:operation];
-	//[display setText:[NSString stringWithFormat:@"%g", result]];
 	[self.brain performOperation:operation];
 	display.text = [NSString stringWithFormat:@"%g", self.brain.operand];
 }
