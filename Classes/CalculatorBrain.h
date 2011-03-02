@@ -16,6 +16,7 @@
 	double waitingOperand;
 	NSString *waitingOperation;
 	NSString *variableAsOperand;
+	NSMutableArray *internalExpression;
 }
 
 
@@ -26,7 +27,8 @@
 
 @property (nonatomic, retain) NSString *waitingOperation;
 @property (nonatomic, retain) NSString *variableAsOperand;
-@property (nonatomic, retain, readonly) id expression;
+@property (nonatomic, retain) NSMutableArray *internalExpression;
+//@property (nonatomic, readonly) id expression;
 
 - (double)performOperation:(NSString *)operation;
 

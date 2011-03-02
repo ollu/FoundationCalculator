@@ -11,12 +11,21 @@
 
 @implementation CalculatorBrain
 
-@synthesize memory;
+@synthesize memory;				// What's stored in the memory
 @synthesize operand;
-@synthesize waitingOperand;
-@synthesize expression;
+@synthesize waitingOperand;		// Queued operand
+@synthesize internalExpression;	// The complete operation
+
 @synthesize waitingOperation;
-@synthesize variableAsOperand;
+@synthesize variableAsOperand;	// Any variables in the expression
+
+- (id) init {
+	if (self = [super init]) {
+		internalExpression = [[NSMutableArray alloc] init];
+		NSLog(@"init");
+	}
+	return self;
+}
 
 - (void)performWaitingOperation {
 	if ([@"+" isEqual:waitingOperation]) {
@@ -35,10 +44,28 @@
 	}
 }
 
+- (void)setVariableAsOperand:(NSString *)variable {
+
+	NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
+	[f setNumberStyle:NSNumberFormatterDecimalStyle];
+	NSNumber * myNumber = [f numberFromString:variable];
+
+	if (myNumber) {
+		[internalExpression addObject:myNumber];
+	}
+	else {
+		if (![variable isEqual:@"C"]) {
+			[internalExpression addObject:variable];
+		}
+		
+	}
+
+	[f release];
+}
+
 // operation is the arithmetic sent
 // and operand is the number
 - (double)performOperation:(NSString *)operation {
-		NSLog(@"%@", operation);
 	
 	if ([operation isEqual:@"sqrt"]) {
 		self.operand = sqrt(self.operand);
@@ -80,6 +107,7 @@
 		self.operand = 0;
 		self.waitingOperand = 0;
 		waitingOperation = nil;
+		[internalExpression removeAllObjects];
 	}
 	else {
 		[self performWaitingOperation];
@@ -91,7 +119,7 @@
 }
 
 - (void)dealloc {
-	[expression release];
+	[internalExpression release];
 	[waitingOperation release];
 	[variableAsOperand release];
     [super dealloc];
