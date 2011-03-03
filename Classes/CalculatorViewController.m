@@ -11,39 +11,53 @@
 @implementation CalculatorViewController
 
 @synthesize userIsInTheMiddleOfTypingANumber;
+@synthesize userIsTypingAnExpression;
 @synthesize display;
 @synthesize brain;
 
-// "Lazy instanciation"
-//- (CalculatorBrain *)brain {
-//	// If there is no instance of brain create one and return it.
-//	if (!brain) {
-//		brain = [[CalculatorBrain alloc] init];
-//	}
-//	return brain;
-//}
-
 - (void)viewDidLoad {
 	brain = [[CalculatorBrain alloc] init];
+	userIsTypingAnExpression = NO;
+}
+
+- (NSMutableString *)arrayToString:(NSArray *)input {
+	NSMutableString *concatedExpression = [[NSMutableString alloc] init];
+	
+	for (NSObject *obj in input) {
+		if ([obj isKindOfClass:[NSNumber class]]) {
+			[concatedExpression appendString:[obj description]];
+		}
+		else {
+			[concatedExpression appendString:[obj description]];
+		}
+	}
+	[concatedExpression autorelease];
+	return concatedExpression;
 }
 
 - (IBAction)digitPressed:(UIButton *)sender {
 	NSString *digit = sender.titleLabel.text;
 	NSRange range = [display.text rangeOfString:@"."];
-	
+	NSMutableString *displayOutput; //= [[NSMutableString alloc] init];
+
 	// Prevent user from starting a number with zero
 	if ([display.text isEqual:@"0"] && [digit isEqual:@"0"]) {
 		// Silently fail
 		return;
 	}
 	
-	
+	// check so that there will not be more than a single dot in the expression
 	if (range.location == NSNotFound) {	
+		
 		if (userIsInTheMiddleOfTypingANumber) {
-			display.text = [display.text stringByAppendingString:digit];
+			// Record so we can re-build expression later
+			[brain setVariableAsOperand:digit];
+			displayOutput = [self arrayToString:brain.internalExpression];
 		}
 		else {
-			display.text = digit;
+			// Record so we can re-build expression later
+			[brain setVariableAsOperand:digit];
+			displayOutput = [self arrayToString:brain.internalExpression];
 			userIsInTheMiddleOfTypingANumber = YES;
 		}
 	}
@@ -55,15 +69,21 @@
 		}
 		else {
 			if (userIsInTheMiddleOfTypingANumber) {
-				display.text = [display.text stringByAppendingString:digit];
+				// Record so we can re-build expression later
+				[brain setVariableAsOperand:digit];
+
+				displayOutput = [self arrayToString:brain.internalExpression];
 			}
 			else {
-				display.text = digit;
+				// Record so we can re-build expression later
+				[brain setVariableAsOperand:digit];
+				displayOutput = [self arrayToString:brain.internalExpression];
 				userIsInTheMiddleOfTypingANumber = YES;
 			}
 		}
 	}
-	[brain setVariableAsOperand:digit];
+	display.text = displayOutput;
+	NSLog(@"The string: %@", displayOutput);
 }
 
 - (IBAction)operationPressed:(UIButton *)sender {
